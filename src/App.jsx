@@ -35,6 +35,14 @@ function App() {
 
   const [index, setIndex] = useState(0);
   const audioRef = useRef(null);
+  const [started, setStarted] = useState(false);
+const startExperience = () => {
+  if (audioRef.current) {
+    audioRef.current.volume = 0.5;
+    audioRef.current.play();
+  }
+  setStarted(true);
+};
 
   // Auto image slider
   useEffect(() => {
@@ -45,25 +53,25 @@ function App() {
   }, [images.length]);
 
   // Autoplay music
-  useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.volume = 0.5;
-      // Try to play, and if it fails due to browser policy, play on first user interaction
-      const playPromise = audioRef.current.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          // If autoplay is blocked, play on first user interaction
-          const playOnInteraction = () => {
-            audioRef.current.play();
-            document.removeEventListener("click", playOnInteraction);
-            document.removeEventListener("touchstart", playOnInteraction);
-          };
-          document.addEventListener("click", playOnInteraction);
-          document.addEventListener("touchstart", playOnInteraction);
-        });
-      }
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (audioRef.current) {
+  //     audioRef.current.volume = 0.5;
+  //     // Try to play, and if it fails due to browser policy, play on first user interaction
+  //     const playPromise = audioRef.current.play();
+  //     if (playPromise !== undefined) {
+  //       playPromise.catch(() => {
+  //         // If autoplay is blocked, play on first user interaction
+  //         const playOnInteraction = () => {
+  //           audioRef.current.play();
+  //           document.removeEventListener("click", playOnInteraction);
+  //           document.removeEventListener("touchstart", playOnInteraction);
+  //         };
+  //         document.addEventListener("click", playOnInteraction);
+  //         document.addEventListener("touchstart", playOnInteraction);
+  //       });
+  //     }
+  //   }
+  // }, []);
   console.log("...", import.meta.env.BASE_URL + "music/tumse-hi-tumse.mp3");
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-pink-400 via-rose-300 to-purple-400 overflow-hidden relative flex flex-col items-center justify-center text-white">
@@ -72,7 +80,6 @@ function App() {
         ref={audioRef}
         src={import.meta.env.BASE_URL + "music/tumse-hi-tumse.mp3"}
         loop
-        autoPlay
       />
 
       {/* Sparkle Glitter Animation */}
@@ -135,6 +142,18 @@ function App() {
         ))}
       </div>
 
+      {!started && (
+  <div className="fixed inset-0 bg-black flex items-center justify-center z-50">
+    <button
+      onClick={startExperience}
+      className="px-8 py-4 text-2xl bg-pink-500 text-white rounded-2xl shadow-lg"
+    >
+      💖 Tap to Start 💖
+    </button>
+  </div>
+)}
+
+
       {/* Popping Hearts on Click */}
       <motion.div
         key={index}
@@ -177,23 +196,22 @@ function App() {
           </motion.div>
         ))}
 
-<motion.h1
-  initial={{ opacity: 0, y: -40 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 1 }}
-  className="text-4xl md:text-6xl text-center drop-shadow-2xl mb-4 px-4 mt-6"
-  style={{
-    fontFamily: "Pacifico, cursive",
-    letterSpacing: "2px",
-    color: "#f73a3a",
-    WebkitTextStroke: "2px #f9f2c8ee",   // 🌻 Golden border
-    textShadow:
-      "0 0 30px rgba(255, 255, 255, 0.56), 0 4px 6px rgba(0, 0, 0, 0.3), 0 0 20px rgba(254, 202, 202, 0.6)",
-  }}
->
-  🌻 Happy Valentine's Day, Appuuddiii💖🌻
-</motion.h1>
-
+        <motion.h1
+          initial={{ opacity: 0, y: -40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="text-4xl md:text-6xl text-center drop-shadow-2xl mb-4 px-4 mt-6"
+          style={{
+            fontFamily: "Pacifico, cursive",
+            letterSpacing: "2px",
+            color: "#f73a3a",
+            WebkitTextStroke: "2px #f9f2c8ee", // 🌻 Golden border
+            textShadow:
+              "0 0 30px rgba(255, 255, 255, 0.56), 0 4px 6px rgba(0, 0, 0, 0.3), 0 0 20px rgba(254, 202, 202, 0.6)",
+          }}
+        >
+          🌻 Happy Valentine's Day, Appuuddiii💖🌻
+        </motion.h1>
       </motion.div>
 
       <motion.p
