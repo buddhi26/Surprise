@@ -4,18 +4,18 @@ import { Heart, Sparkles } from "lucide-react";
 
 function App() {
   const images = [
-    import.meta.env.BASE_URL +"/images/photo1.jpg",
-    import.meta.env.BASE_URL +"/images/photo2.jpg",
-    import.meta.env.BASE_URL +"/images/photo3.jpg",
-    import.meta.env.BASE_URL +"/images/photo4.jpg",
-    import.meta.env.BASE_URL +"/images/photo5.jpg",
-    import.meta.env.BASE_URL +"/images/photo6.jpg",
-    import.meta.env.BASE_URL +"/images/photo7.jpg",
-    import.meta.env.BASE_URL +"/images/photo8.jpg",
-    import.meta.env.BASE_URL +"/images/photo9.jpg",
-    import.meta.env.BASE_URL +"/images/photo10.jpg",
-    import.meta.env.BASE_URL +"/images/photo11.jpg",
-    import.meta.env.BASE_URL +"/images/photo12.jpg",
+    import.meta.env.BASE_URL + "/images/photo1.jpg",
+    import.meta.env.BASE_URL + "/images/photo2.jpg",
+    import.meta.env.BASE_URL + "/images/photo3.jpg",
+    import.meta.env.BASE_URL + "/images/photo4.jpg",
+    import.meta.env.BASE_URL + "/images/photo5.jpg",
+    import.meta.env.BASE_URL + "/images/photo6.jpg",
+    import.meta.env.BASE_URL + "/images/photo7.jpg",
+    import.meta.env.BASE_URL + "/images/photo8.jpg",
+    import.meta.env.BASE_URL + "/images/photo9.jpg",
+    import.meta.env.BASE_URL + "/images/photo10.jpg",
+    import.meta.env.BASE_URL + "/images/photo11.jpg",
+    import.meta.env.BASE_URL + "/images/photo12.jpg",
   ];
 
   const messages = [
@@ -64,11 +64,16 @@ function App() {
       }
     }
   }, []);
-
+  console.log("...", import.meta.env.BASE_URL + "music/tumse-hi-tumse.mp3");
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-pink-400 via-rose-300 to-purple-400 overflow-hidden relative flex flex-col items-center justify-center text-white">
       {/* Background Music */}
-      <audio ref={audioRef}   src={import.meta.env.BASE_URL + "music/tumse-hi-tumse.mp3"} loop autoPlay />
+      <audio
+        ref={audioRef}
+        src={import.meta.env.BASE_URL + "music/tumse-hi-tumse.mp3"}
+        loop
+        autoPlay
+      />
 
       {/* Sparkle Glitter Animation */}
       <div className="absolute inset-0 overflow-hidden z-0">
