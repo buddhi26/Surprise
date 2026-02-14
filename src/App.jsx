@@ -177,21 +177,23 @@ function App() {
           </motion.div>
         ))}
 
-        <motion.h1
-          initial={{ opacity: 0, y: -40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="text-5xl md:text-7xl text-center drop-shadow-2xl mb-4 px-4"
-          style={{
-            fontFamily: "Pacifico, cursive",
-            letterSpacing: "2px",
-            color: "#fff5f5",
-            textShadow:
-              "0 0 30px rgba(255, 255, 255, 0.5), 0 4px 6px rgba(0, 0, 0, 0.3), 0 0 20px rgba(254, 202, 202, 0.6)",
-          }}
-        >
-          Happy Valentine's Day 💖
-        </motion.h1>
+<motion.h1
+  initial={{ opacity: 0, y: -40 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1 }}
+  className="text-5xl md:text-7xl text-center drop-shadow-2xl mb-4 px-4"
+  style={{
+    fontFamily: "Pacifico, cursive",
+    letterSpacing: "2px",
+    color: "#f73a3a",
+    WebkitTextStroke: "2px #f9f2c8ee",   // 🌻 Golden border
+    textShadow:
+      "0 0 30px rgba(255, 255, 255, 0.56), 0 4px 6px rgba(0, 0, 0, 0.3), 0 0 20px rgba(254, 202, 202, 0.6)",
+  }}
+>
+  🌻 Happy Valentine's Day 💖🌻
+</motion.h1>
+
       </motion.div>
 
       <motion.p
@@ -207,7 +209,7 @@ function App() {
             "0 0 20px rgba(255, 255, 255, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 15px rgba(254, 243, 199, 0.5)",
         }}
       >
-        To My Favorite Person in the Whole World ✨
+        To My Favorite Person in the Whole World 🫂✨
       </motion.p>
 
       {/* Image Carousel */}
