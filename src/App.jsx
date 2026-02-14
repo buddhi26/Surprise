@@ -19,13 +19,13 @@ function App() {
   ];
 
   const messages = [
-    "Excuse me sir… how are you THIS handsome? 😌",
+    "Excuse me sir… how are you THIS handsome? 😌😏😏",
     "Aapka mujhse lagaav badhta ja raha hai, Bhagwan ji aapki raksha kare 🙏✨",
     "Forever grateful the universe brought you to me ∞💖",
     "Official announcement: You are stuck with me forever! 😜",
     "Tumse hi din hota hai, tumse hi raat hoti hai... 🌅🌙",
     "Thank you for making my heart smile every single day 💖",
-    "Stop being so cute, it's distracting 😏",
+    "Stop being so cute, it's distracting 😏😏😏",
     "You are my safe place, my happiness, and my biggest blessing 💞",
     "My favorite notification is YOU 💌",
     "Tumhari smile dekh ke mera din ban jata hai 😊💫",
@@ -181,7 +181,7 @@ function App() {
   initial={{ opacity: 0, y: -40 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ duration: 1 }}
-  className="text-5xl md:text-7xl text-center drop-shadow-2xl mb-4 px-4"
+  className="text-4xl md:text-6xl text-center drop-shadow-2xl mb-4 px-4 mt-6"
   style={{
     fontFamily: "Pacifico, cursive",
     letterSpacing: "2px",
@@ -191,7 +191,7 @@ function App() {
       "0 0 30px rgba(255, 255, 255, 0.56), 0 4px 6px rgba(0, 0, 0, 0.3), 0 0 20px rgba(254, 202, 202, 0.6)",
   }}
 >
-  🌻 Happy Valentine's Day 💖🌻
+  🌻 Happy Valentine's Day, Appuuddiii💖🌻
 </motion.h1>
 
       </motion.div>
@@ -209,7 +209,7 @@ function App() {
             "0 0 20px rgba(255, 255, 255, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 15px rgba(254, 243, 199, 0.5)",
         }}
       >
-        To My Favorite Person in the Whole World 🫂✨
+        My Favorite Person in the Whole World 🫂✨
       </motion.p>
 
       {/* Image Carousel */}
